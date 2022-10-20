@@ -25,9 +25,9 @@ $dt_cadastro =  date('y-m-d');
 //conecta ao banco e grava os dados (insert com PDO)
 try {
      // instancia o banco por meio do PDO
-     $pdo = new PDO('mysql:host=local;dbaname=meuBanco=explore' ,  ' root ' , ' ' );
+     $pdo = new PDO('mysql:host=localhost;dbaname=explore' ,  'root' , '' );
      //INSERT na tabela users
-     $sql = $pdo->prepare(' insert into users (nome, email, sexo, telefone, senha, idade, estado, cidade, destinos, hospedagem, mensagem, dt_cadastro) value(:nome, :email, :sexo, :telefone, :senha, :idade, :estado, :cidade, :destinos, :hospedagem, :mensagem, :dt_cadastro) ');
+     $sql = $pdo->prepare('insert into users (nome, email, sexo, telefone, senha, idade, estado, cidade, destinos, hospedagem, mensagem, dt_cadastro) value(:nome, :email, :sexo, :telefone, :senha, :idade, :estado, :cidade, :destinos, :hospedagem, :mensagem, :dt_cadastro)');
      $sql->execute( array(
          ':nome' => $nome,
          ' :email' => $email,
